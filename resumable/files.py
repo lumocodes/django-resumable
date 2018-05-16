@@ -22,7 +22,7 @@ class ResumableFile(object):
     def chunk_names(self):
         """Iterates over all stored chunks and yields their names."""
         file_names = sorted(self.storage.listdir('')[1])
-        pattern = '%s%s*' % (self.filename, self.chunk_suffix)
+        pattern = u'%s%s*' % (self.filename, self.chunk_suffix)
         for name in file_names:
             if fnmatch.fnmatch(name, pattern):
                 yield name
