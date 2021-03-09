@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import
 from distutils.core import setup
 from setuptools import find_packages
 
@@ -6,7 +7,7 @@ from setuptools import find_packages
 setup(
     name='django-resumable',
     version='0.1',
-    author=u'jean-philippe serafin',
+    author='jean-philippe serafin',
     author_email='serafinjp@gmail.com',
     packages=find_packages(),
     include_package_data=True,
@@ -17,6 +18,7 @@ setup(
     install_requires=[
         'Django>=1.4',
         'python-magic',
+        'six',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',

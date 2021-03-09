@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import
 import fnmatch
+import six
 
 
 class ResumableFile(object):
@@ -22,7 +24,7 @@ class ResumableFile(object):
     def chunk_names(self):
         """Iterates over all stored chunks and yields their names."""
         file_names = sorted(self.storage.listdir('')[1])
-        pattern = u'%s%s*' % (self.filename, self.chunk_suffix)
+        pattern = six.u('%s%s*') % (self.filename, self.chunk_suffix)
         for name in file_names:
             if fnmatch.fnmatch(name, pattern):
                 yield name

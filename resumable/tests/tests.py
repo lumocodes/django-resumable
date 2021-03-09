@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import
 import os
 
-from urllib import urlencode
+from six.moves.urllib.parse import urlencode
 
 from django.conf import settings
 from django.test import TestCase

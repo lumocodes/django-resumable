@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import
 from django.forms.fields import FileField
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
-from widgets import ResumableFileInput
+from .widgets import ResumableFileInput
+import six
 
 
 class ResumableFileField(FileField):
     default_error_messages = dict(FileField.default_error_messages, **{
-            'invalid_mime': _(u'Invalid file type')
+            'invalid_mime': _(six.u('Invalid file type'))
     })
     widget = ResumableFileInput
 
